@@ -16,6 +16,9 @@ jobs:
 
     - name: Download everything
       run: make
+
+    - name: List everything
+      run: ls -lh
       
     - uses: actions/upload-artifact@v3
       with:
