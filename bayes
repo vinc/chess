@@ -1,0 +1,16 @@
+#!/bin/bash
+
+bayeselo=./bayeselo
+for pgn in $@; do
+    readpgn="${readpgn}readpgn $pgn"$'\n'
+done
+$bayeselo <<ELOSCRIPT
+prompt off
+$readpgn
+elo
+mm
+offset 2200 MORA
+ratings >ratings.txt
+x
+x
+ELOSCRIPT
